@@ -26,4 +26,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "SOT-Ads-Library"
 include ':app'
-include ':SOTAdLib'
+include ':FOF_lib'
