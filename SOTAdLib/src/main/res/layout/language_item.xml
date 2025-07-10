@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/selectedBackground"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_60sdp"
+    android:layout_marginVertical="@dimen/_5sdp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <!-- Radio Button (Selection Indicator) -->
+    <ImageView
+        android:id="@+id/ivUnSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_20sdp"
+        android:contentDescription="@string/des_selection_state"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Country Name -->
+    <TextView
+        android:id="@+id/tvCountryNameLanguage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5ssp"
+        android:layout_marginEnd="@dimen/_5ssp"
+        android:text="@string/label_country_name"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lexend_semibold"
+        android:gravity="start"
+        android:textDirection="locale"
+        android:textAlignment="viewStart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ivCountryFlagLanguage"
+        app:layout_constraintStart_toEndOf="@+id/ivUnSelected"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Country Flag -->
+    <ImageView
+        android:id="@+id/ivCountryFlagLanguage"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:contentDescription="@string/des_country_flag"
+        android:src="@drawable/portugal"
+        android:layout_marginEnd="@dimen/_20sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
