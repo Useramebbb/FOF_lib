@@ -24,6 +24,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SOT-Ads-Library"
+rootProject.name = "FOF-Library"
 include ':app'
 include ':FOF_lib'
