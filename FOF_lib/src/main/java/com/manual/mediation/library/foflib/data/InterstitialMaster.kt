@@ -1,7 +1,0 @@
-package com.manual.mediation.library.foflib.data
-
-import com.google.android.gms.ads.interstitial.InterstitialAd
-
-object InterstitialMaster {
-    var interstitialAdMobHashMap: HashMap<String, InterstitialAd> = HashMap()
-}

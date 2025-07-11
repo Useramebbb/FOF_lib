@@ -18,44 +18,44 @@
 -keep public class androidx.appcompat.widget.AppCompatImageView {*;}
 -keep public class androidx.recyclerview.*{*;}
 
--keep class com.manual.mediation.library.foflib.activities.AppCompatBaseActivity.** { *; }
--keep class com.manual.mediation.library.foflib.activities.LanguageScreenOne.** { *; }
--keep class com.manual.mediation.library.foflib.activities.LanguageScreenDup.** { *; }
--keep class com.manual.mediation.library.foflib.activities.WalkThroughConfigActivity.** { *; }
--keep class com.manual.mediation.library.foflib.activities.WelcomeScreenOne.** { *; }
--keep class com.manual.mediation.library.foflib.activities.WelcomeScreenDup.** { *; }
--keep class com.manual.mediation.library.foflib.activities.WTFullScreenAdFragment.** { *; }
--keep class com.manual.mediation.library.foflib.activities.WTOneFragment.** { *; }
--keep class com.manual.mediation.library.foflib.activities.WTThreeFragment.** { *; }
--keep class com.manual.mediation.library.foflib.activities.WTTwoFragment.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.AppCompatBaseActivity.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.LanguageScreenOne.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.LanguageScreenDup.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.WalkThroughConfigActivity.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.WelcomeScreenOne.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.WelcomeScreenDup.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.WTFullScreenAdFragment.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.WTOneFragment.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.WTThreeFragment.** { *; }
+-keep class com.manual.mediation.library.sotadlib.activities.WTTwoFragment.** { *; }
 
--keep class com.manual.mediation.library.foflib.adapters.LanguageAdapter.** { *; }
--keep class com.manual.mediation.library.foflib.adapters.WalkThroughAdapter.** { *; }
+-keep class com.manual.mediation.library.sotadlib.adapters.LanguageAdapter.** { *; }
+-keep class com.manual.mediation.library.sotadlib.adapters.WalkThroughAdapter.** { *; }
 
--keep class com.manual.mediation.library.foflib.adMobAdClasses.AdMobBannerAdSplash.** { *; }
--keep class com.manual.mediation.library.foflib.adMobAdClasses.AdmobInterstitialAdSplash.** { *; }
--keep class com.manual.mediation.library.foflib.adMobAdClasses.AdmobNativeAdManager.** { *; }
--keep class com.manual.mediation.library.foflib.adMobAdClasses.AdmobResumeAdSplash.** { *; }
+-keep class com.manual.mediation.library.sotadlib.adMobAdClasses.AdMobBannerAdSplash.** { *; }
+-keep class com.manual.mediation.library.sotadlib.adMobAdClasses.AdmobInterstitialAdSplash.** { *; }
+-keep class com.manual.mediation.library.sotadlib.adMobAdClasses.AdmobNativeAdManager.** { *; }
+-keep class com.manual.mediation.library.sotadlib.adMobAdClasses.AdmobResumeAdSplash.** { *; }
 
--keep class com.manual.mediation.library.foflib.callingClasses.LanguageScreensConfiguration.** { *; }
--keep class com.manual.mediation.library.foflib.callingClasses.SOTAdsConfigurations.** { *; }
--keep class com.manual.mediation.library.foflib.callingClasses.SOTAdsManager.** { *; }
--keep class com.manual.mediation.library.foflib.callingClasses.WalkThroughScreensConfiguration.** { *; }
--keep class com.manual.mediation.library.foflib.callingClasses.WelcomeScreensConfiguration.** { *; }
+-keep class com.manual.mediation.library.sotadlib.callingClasses.LanguageScreensConfiguration.** { *; }
+-keep class com.manual.mediation.library.sotadlib.callingClasses.SOTAdsConfigurations.** { *; }
+-keep class com.manual.mediation.library.sotadlib.callingClasses.SOTAdsManager.** { *; }
+-keep class com.manual.mediation.library.sotadlib.callingClasses.WalkThroughScreensConfiguration.** { *; }
+-keep class com.manual.mediation.library.sotadlib.callingClasses.WelcomeScreensConfiguration.** { *; }
 
--keep class com.manual.mediation.library.foflib.data.Language.** { *; }
--keep class com.manual.mediation.library.foflib.data.WalkThroughItem.** { *; }
+-keep class com.manual.mediation.library.sotadlib.data.Language.** { *; }
+-keep class com.manual.mediation.library.sotadlib.data.WalkThroughItem.** { *; }
 
--keep interface com.manual.mediation.library.foflib.interfaces.LanguageInterface.** { *; }
--keep interface com.manual.mediation.library.foflib.interfaces.WelcomeInterface.** { *; }
--keep interface com.manual.mediation.library.foflib.interfaces.OnNextButtonClickListener.** { *; }
+-keep interface com.manual.mediation.library.sotadlib.interfaces.LanguageInterface.** { *; }
+-keep interface com.manual.mediation.library.sotadlib.interfaces.WelcomeInterface.** { *; }
+-keep interface com.manual.mediation.library.sotadlib.interfaces.OnNextButtonClickListener.** { *; }
 
 
--keep class com.manual.mediation.library.foflib.utils.AdLoadingDialog.** { *; }
--keep class com.manual.mediation.library.foflib.utils.ExFunKt.** { *; }
--keep class com.manual.mediation.library.foflib.utils.MyLocaleHelper.** { *; }
--keep class com.manual.mediation.library.foflib.utils.NetworkCheck.** { *; }
--keep class com.manual.mediation.library.foflib.utils.PrefHelper.** { *; }
+-keep class com.manual.mediation.library.sotadlib.utils.AdLoadingDialog.** { *; }
+-keep class com.manual.mediation.library.sotadlib.utils.ExFunKt.** { *; }
+-keep class com.manual.mediation.library.sotadlib.utils.MyLocaleHelper.** { *; }
+-keep class com.manual.mediation.library.sotadlib.utils.NetworkCheck.** { *; }
+-keep class com.manual.mediation.library.sotadlib.utils.PrefHelper.** { *; }
 
--keep class com.manual.mediation.library.foflib.utilsGoogleAdsConsent.ConsentConfigurations.** { *; }
--keep class com.manual.mediation.library.foflib.utilsGoogleAdsConsent.GoogleMobileAdsConsentManager.** { *; }
+-keep class com.manual.mediation.library.sotadlib.utilsGoogleAdsConsent.ConsentConfigurations.** { *; }
+-keep class com.manual.mediation.library.sotadlib.utilsGoogleAdsConsent.GoogleMobileAdsConsentManager.** { *; }

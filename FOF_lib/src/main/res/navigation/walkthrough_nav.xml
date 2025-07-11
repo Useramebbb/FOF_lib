@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_w_t_one"
-        android:name="com.manual.mediation.library.foflib.activities.WTOneFragment"
+        android:name="com.manual.mediation.library.sotadlib.activities.WTOneFragment"
         tools:layout="@layout/fragment_w_t_one">
 
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/nav_w_t_two"
-        android:name="com.manual.mediation.library.foflib.activities.WTTwoFragment"
+        android:name="com.manual.mediation.library.sotadlib.activities.WTTwoFragment"
         tools:layout="@layout/fragment_w_t_two">
 
         <action
@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/nav_w_t_three"
-        android:name="com.manual.mediation.library.foflib.activities.WTThreeFragment"
+        android:name="com.manual.mediation.library.sotadlib.activities.WTThreeFragment"
         tools:layout="@layout/fragment_w_t_three">
 
         <action
