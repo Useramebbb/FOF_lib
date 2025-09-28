@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.intuit.sdp:sdp-android:1.1.1@aar" external-system-id="GRADLE">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/8.11.1/transforms/156820cf4a79ea21f20c942aefe71c83/transformed/sdp-android-1.1.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.11.1/transforms/156820cf4a79ea21f20c942aefe71c83/transformed/sdp-android-1.1.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.11.1/transforms/156820cf4a79ea21f20c942aefe71c83/transformed/sdp-android-1.1.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
