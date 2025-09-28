@@ -97,17 +97,16 @@
             app:layout_constraintStart_toStartOf="@+id/ad_attribute"
             app:layout_constraintTop_toBottomOf="@+id/ad_attribute" />
 
-        <Button
+        <TextView
             android:id="@+id/adCallToAction"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginHorizontal="@dimen/_4sdp"
             android:layout_marginVertical="@dimen/_4sdp"
-            android:background="@drawable/round_corners_2dp"
-            app:backgroundTint="@color/blue"
+            android:background="@drawable/ad_att_bg_4_fuu_ad"
             android:fontFamily="@font/lexend_medium"
             android:textAllCaps="false"
-            android:textColor="@color/black"
+            android:textColor="@color/White"
             android:textStyle="bold"
             app:cornerRadius="@dimen/_10sdp"
             app:layout_constraintBottom_toBottomOf="parent"

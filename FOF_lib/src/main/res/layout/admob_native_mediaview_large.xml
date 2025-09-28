@@ -119,20 +119,23 @@
             android:layout_height="150dp"
             android:layout_marginHorizontal="@dimen/_5sdp"
             android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:background="@color/black"
             app:layout_constraintBottom_toTopOf="@+id/adCallToAction"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/glNativeAdmobMedium3" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/adCallToAction"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
             android:layout_marginHorizontal="@dimen/_5sdp"
-            android:background="@drawable/ad_att_bg"
+            android:background="@drawable/ad_att_bg_4_fuu_ad"
             android:text="@string/ad_label_install"
-            android:textColor="@color/black"
+            android:textColor="@color/White"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/adMedia"
             app:layout_constraintStart_toStartOf="@id/adMedia"

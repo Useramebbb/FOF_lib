@@ -18,44 +18,44 @@
 -keep public class androidx.appcompat.widget.AppCompatImageView {*;}
 -keep public class androidx.recyclerview.*{*;}
 
--keep class com.manual.mediation.library.sotadlib.activities.AppCompatBaseActivity.** { *; }
--keep class com.manual.mediation.library.sotadlib.activities.LanguageScreenOne.** { *; }
--keep class com.manual.mediation.library.sotadlib.activities.LanguageScreenDup.** { *; }
--keep class com.manual.mediation.library.sotadlib.activities.WalkThroughConfigActivity.** { *; }
--keep class com.manual.mediation.library.sotadlib.activities.WelcomeScreenOne.** { *; }
--keep class com.manual.mediation.library.sotadlib.activities.WelcomeScreenDup.** { *; }
--keep class com.manual.mediation.library.sotadlib.activities.WTFullScreenAdFragment.** { *; }
--keep class com.manual.mediation.library.sotadlib.activities.WTOneFragment.** { *; }
--keep class com.manual.mediation.library.sotadlib.activities.WTThreeFragment.** { *; }
--keep class com.manual.mediation.library.sotadlib.activities.WTTwoFragment.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.AppCompatBaseActivity.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.LanguageScreenOne.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.LanguageScreenDup.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.WalkThroughConfigActivity.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.WelcomeScreenOne.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.WelcomeScreenDup.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.WTFullScreenAdFragment.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.WTOneFragment.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.WTThreeFragment.** { *; }
+-keep class com.manual.niceapps.fofscr.lib.activities.WTTwoFragment.** { *; }
 
--keep class com.manual.mediation.library.sotadlib.adapters.LanguageAdapter.** { *; }
--keep class com.manual.mediation.library.sotadlib.adapters.WalkThroughAdapter.** { *; }
+-keep class com.niceapps.fofscr.lib.adapters.LanguageAdapter.** { *; }
+-keep class com.niceapps.fofscr.lib.adapters.WalkThroughAdapter.** { *; }
 
--keep class com.manual.mediation.library.sotadlib.adMobAdClasses.AdMobBannerAdSplash.** { *; }
--keep class com.manual.mediation.library.sotadlib.adMobAdClasses.AdmobInterstitialAdSplash.** { *; }
--keep class com.manual.mediation.library.sotadlib.adMobAdClasses.AdmobNativeAdManager.** { *; }
--keep class com.manual.mediation.library.sotadlib.adMobAdClasses.AdmobResumeAdSplash.** { *; }
+-keep class com.niceapps.fofscr.lib.adMobAdClasses.AdMobBannerAdSplash.** { *; }
+-keep class com.niceapps.fofscr.lib.adMobAdClasses.AdmobInterstitialAdSplash.** { *; }
+-keep class com.niceapps.fofscr.lib.adMobAdClasses.AdmobNativeAdManager.** { *; }
+-keep class com.niceapps.fofscr.lib.adMobAdClasses.AdmobResumeAdSplash.** { *; }
 
--keep class com.manual.mediation.library.sotadlib.callingClasses.LanguageScreensConfiguration.** { *; }
--keep class com.manual.mediation.library.sotadlib.callingClasses.SOTAdsConfigurations.** { *; }
--keep class com.manual.mediation.library.sotadlib.callingClasses.SOTAdsManager.** { *; }
--keep class com.manual.mediation.library.sotadlib.callingClasses.WalkThroughScreensConfiguration.** { *; }
--keep class com.manual.mediation.library.sotadlib.callingClasses.WelcomeScreensConfiguration.** { *; }
+-keep class com.niceapps.fofscr.lib.callingClasses.LanguageScreensConfiguration.** { *; }
+-keep class com.niceapps.fofscr.lib.callingClasses.FOFAdsConfigurations.** { *; }
+-keep class com.niceapps.fofscr.lib.callingClasses.FOFAdsManager.** { *; }
+-keep class com.niceapps.fofscr.lib.callingClasses.WalkThroughScreensConfiguration.** { *; }
+-keep class com.niceapps.fofscr.lib.callingClasses.WelcomeScreensConfiguration.** { *; }
 
--keep class com.manual.mediation.library.sotadlib.data.Language.** { *; }
--keep class com.manual.mediation.library.sotadlib.data.WalkThroughItem.** { *; }
+-keep class com.niceapps.fofscr.lib.data.Language.** { *; }
+-keep class com.niceapps.fofscr.lib.data.WalkThroughItem.** { *; }
 
--keep interface com.manual.mediation.library.sotadlib.interfaces.LanguageInterface.** { *; }
--keep interface com.manual.mediation.library.sotadlib.interfaces.WelcomeInterface.** { *; }
--keep interface com.manual.mediation.library.sotadlib.interfaces.OnNextButtonClickListener.** { *; }
+-keep interface com.niceapps.fofscr.lib.interfaces.LanguageInterface.** { *; }
+-keep interface com.niceapps.fofscr.lib.interfaces.WelcomeInterface.** { *; }
+-keep interface com.niceapps.fofscr.lib.interfaces.OnNextButtonClickListener.** { *; }
 
 
--keep class com.manual.mediation.library.sotadlib.utils.AdLoadingDialog.** { *; }
--keep class com.manual.mediation.library.sotadlib.utils.ExFunKt.** { *; }
--keep class com.manual.mediation.library.sotadlib.utils.MyLocaleHelper.** { *; }
--keep class com.manual.mediation.library.sotadlib.utils.NetworkCheck.** { *; }
--keep class com.manual.mediation.library.sotadlib.utils.PrefHelper.** { *; }
+-keep class com.niceapps.fofscr.lib.utils.AdLoadingDialog.** { *; }
+-keep class com.niceapps.fofscr.lib.utils.ExFunKt.** { *; }
+-keep class com.niceapps.fofscr.lib.utils.MyLocaleHelper.** { *; }
+-keep class com.niceapps.fofscr.lib.utils.NetworkCheck.** { *; }
+-keep class com.niceapps.fofscr.lib.utils.PrefHelper.** { *; }
 
--keep class com.manual.mediation.library.sotadlib.utilsGoogleAdsConsent.ConsentConfigurations.** { *; }
--keep class com.manual.mediation.library.sotadlib.utilsGoogleAdsConsent.GoogleMobileAdsConsentManager.** { *; }
+-keep class com.niceapps.fofscr.lib.utilsGoogleAdsConsent.ConsentConfigurations.** { *; }
+-keep class com.niceapps.fofscr.lib.utilsGoogleAdsConsent.GoogleMobileAdsConsentManager.** { *; }

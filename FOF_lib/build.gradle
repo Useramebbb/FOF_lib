@@ -6,12 +6,12 @@ plugins {
 }
 
 android {
-    namespace 'com.manual.mediation.library.sotadlib'
+    namespace 'com.manual.niceapps.fofscr.lib'
     compileSdk 35
 
     defaultConfig {
         minSdk 23
-
+        targetSdk 35
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }

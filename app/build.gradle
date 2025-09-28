@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.sot.adslib'
+    namespace 'com.niceapp.fof.lib'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.sot.adslib"
+        applicationId "com.niceapp.fof.lib"
         minSdk 23
         targetSdk 35
         versionCode 1
