@@ -17,6 +17,8 @@ import com.google.android.gms.ads.nativead.MediaView
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdView
 import com.niceapps.fofscr.lib.BuildConfig
+
+
 import com.niceapps.fofscr.lib.R
 import com.niceapps.fofscr.lib.utils.NetworkCheck
 
