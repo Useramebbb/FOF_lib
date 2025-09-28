@@ -161,7 +161,66 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="413e0c7a-49af-443e-bc21-aba86b8f47c0" name="Changes" comment="versionName &quot;1.1.3&quot;" />
+    <list default="true" id="413e0c7a-49af-443e-bc21-aba86b8f47c0" name="Changes" comment="versionName &quot;1.1.3&quot;">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/FOF_lib/FOF-Library.FOF_lib.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/FOF_lib/FOF-Library.FOF_lib.unitTest.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FOF-Library.app.androidTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FOF-Library.app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FOF-Library.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FOF-Library.app.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FOF-Library.app.unitTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/FOF_lib/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/FOF_lib/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/androidTest/java/com/com.niceapps/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/AppCompatBaseActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/LanguageScreenDup.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/LanguageScreenOne.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/WTFullScreenAdFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/WTOneFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/WTThreeFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/WTTwoFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/WalkThroughConfigActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/WelcomeScreenDup.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/activities/WelcomeScreenOne.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/adMobAdClasses/AdMobBannerAdSplash.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/adMobAdClasses/AdMobInterstitialInside.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/adMobAdClasses/AdmobInterstitialAdSplash.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/adMobAdClasses/AdmobNativeAdFullScreen.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/adMobAdClasses/AdmobNativeAdManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/adMobAdClasses/AdmobResumeAdSplash.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/adapters/LanguageAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/adapters/WalkThroughAdapter.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/callingClasses/FOFAdsConfigurations.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/callingClasses/FOFAdsManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/callingClasses/LanguageScreensConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/callingClasses/WalkThroughScreensConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/callingClasses/WelcomeScreensConfiguration.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/data/InterstitialMaster.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/data/Languages.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/data/WalkThroughItem.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/interfaces/CommonEventTracker.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/interfaces/OnNextButtonClickListener.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/interfaces/WelcomeInterface.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/objects/StatusBarColor.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/utils/AdLoadingDialog.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/utils/ExFun.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/utils/FirebaseCommonTracker.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/utils/MyLocaleHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/utils/NetworkCheck.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/utils/PrefHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/utils/WalkThroughFragmentFactory.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/utilsGoogleAdsConsent/ConsentConfigurations.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/com.niceapps.fofscr.lib/utilsGoogleAdsConsent/GoogleMobileAdsConsentManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/res/navigation/walkthrough_nav.xml" beforeDir="false" afterPath="$PROJECT_DIR$/FOF_lib/src/main/res/navigation/walkthrough_nav.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/test/java/com/com.niceapps.fofscr.lib/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/niceapps.fof.lib/TestActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/niceapps.fof.lib/TestActivity.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,7 +229,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\Kalimullah\.android\avd\Pixel_6.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=0619725127011135)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -268,6 +327,7 @@
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -581,7 +641,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759054686952</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="versionName &quot;1.1.3&quot;">
+      <option name="closed" value="true" />
+      <created>1759055636465</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1759055636465</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

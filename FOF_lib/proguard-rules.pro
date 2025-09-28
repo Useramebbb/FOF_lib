@@ -18,16 +18,16 @@
 -keep public class androidx.appcompat.widget.AppCompatImageView {*;}
 -keep public class androidx.recyclerview.*{*;}
 
--keep class com.manual.niceapps.fofscr.lib.activities.AppCompatBaseActivity.** { *; }
--keep class com.manual.niceapps.fofscr.lib.activities.LanguageScreenOne.** { *; }
--keep class com.manual.niceapps.fofscr.lib.activities.LanguageScreenDup.** { *; }
--keep class com.manual.niceapps.fofscr.lib.activities.WalkThroughConfigActivity.** { *; }
--keep class com.manual.niceapps.fofscr.lib.activities.WelcomeScreenOne.** { *; }
--keep class com.manual.niceapps.fofscr.lib.activities.WelcomeScreenDup.** { *; }
--keep class com.manual.niceapps.fofscr.lib.activities.WTFullScreenAdFragment.** { *; }
--keep class com.manual.niceapps.fofscr.lib.activities.WTOneFragment.** { *; }
--keep class com.manual.niceapps.fofscr.lib.activities.WTThreeFragment.** { *; }
--keep class com.manual.niceapps.fofscr.lib.activities.WTTwoFragment.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.AppCompatBaseActivity.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.LanguageScreenOne.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.LanguageScreenDup.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.WalkThroughConfigActivity.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.WelcomeScreenOne.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.WelcomeScreenDup.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.WTFullScreenAdFragment.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.WTOneFragment.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.WTThreeFragment.** { *; }
+-keep class com.niceapps.fofscr.lib.activities.WTTwoFragment.** { *; }
 
 -keep class com.niceapps.fofscr.lib.adapters.LanguageAdapter.** { *; }
 -keep class com.niceapps.fofscr.lib.adapters.WalkThroughAdapter.** { *; }

@@ -15,7 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
-import com.manual.niceapps.fofscr.lib.activities.AppCompatBaseActivity
+import com.niceapps.fofscr.lib.activities.AppCompatBaseActivity
 import com.niceapp.fof.lib.R
 import com.niceapps.fofscr.lib.adMobAdClasses.AdMobBannerAdSplash
 import com.niceapps.fofscr.lib.callingClasses.LanguageScreensConfiguration
@@ -125,23 +125,23 @@ class TestActivity : AppCompatBaseActivity() {
             .setDrawableColors(
                 selectedDrawable = AppCompatResources.getDrawable(
                     this,
-                    com.manual.niceapps.fofscr.lib.R.drawable.ad_att_bg
+                    com.niceapps.fofscr.lib.R.drawable.ad_att_bg
                 )!!,
                 unSelectedDrawable = AppCompatResources.getDrawable(
                     this,
-                    com.manual.niceapps.fofscr.lib.R.drawable.ad_att_bg
+                    com.niceapps.fofscr.lib.R.drawable.ad_att_bg
                 )!!,
                 selectedRadio = AppCompatResources.getDrawable(
                     this,
-                    com.manual.niceapps.fofscr.lib.R.drawable.ic_radio_button_checked
+                    com.niceapps.fofscr.lib.R.drawable.ic_radio_button_checked
                 )!!,
                 unSelectedRadio = AppCompatResources.getDrawable(
                     this,
-                    com.manual.niceapps.fofscr.lib.R.drawable.ic_radio_button_unchecked
+                    com.niceapps.fofscr.lib.R.drawable.ic_radio_button_unchecked
                 )!!,
                 tickSelector = AppCompatResources.getDrawable(
                     this,
-                    com.manual.niceapps.fofscr.lib.R.drawable.ic_done
+                    com.niceapps.fofscr.lib.R.drawable.ic_done
                 )!!,
                 themeColor = ContextCompat.getColor(this, R.color.red),
                 statusBarColor = ContextCompat.getColor(this, R.color.red),
@@ -385,10 +385,10 @@ class TestActivity : AppCompatBaseActivity() {
             WalkThroughItem(
                 heading = "Screen 1",
                 description = "This is screen one",
-                headingColor = com.manual.niceapps.fofscr.lib.R.color.redLib,
-                descriptionColor = com.manual.niceapps.fofscr.lib.R.color.yellowLib,
-                nextColor = com.manual.niceapps.fofscr.lib.R.color.orangeLib,
-                drawableResId = com.manual.niceapps.fofscr.lib.R.drawable.pakistan,
+                headingColor = com.niceapps.fofscr.lib.R.color.redLib,
+                descriptionColor = com.niceapps.fofscr.lib.R.color.yellowLib,
+                nextColor = com.niceapps.fofscr.lib.R.color.orangeLib,
+                drawableResId = com.niceapps.fofscr.lib.R.drawable.pakistan,
                 drawableBubbleResId = R.drawable.ic_launcher_foreground,
                 viewBackgroundColor = R.color.red,
                 imageScale = 1
@@ -396,10 +396,10 @@ class TestActivity : AppCompatBaseActivity() {
             WalkThroughItem(
                 heading = "Screen 2",
                 description = "This is screen two",
-                headingColor = com.manual.niceapps.fofscr.lib.R.color.redLib,
-                descriptionColor = com.manual.niceapps.fofscr.lib.R.color.yellowLib,
-                nextColor = com.manual.niceapps.fofscr.lib.R.color.orangeLib,
-                drawableResId = com.manual.niceapps.fofscr.lib.R.drawable.img2,
+                headingColor = com.niceapps.fofscr.lib.R.color.redLib,
+                descriptionColor = com.niceapps.fofscr.lib.R.color.yellowLib,
+                nextColor = com.niceapps.fofscr.lib.R.color.orangeLib,
+                drawableResId = com.niceapps.fofscr.lib.R.drawable.img2,
                 drawableBubbleResId = R.drawable.ic_launcher_foreground,
                 viewBackgroundColor = R.color.red,
                 imageScale = 1
@@ -407,10 +407,10 @@ class TestActivity : AppCompatBaseActivity() {
             WalkThroughItem(
                 heading = "Screen 3",
                 description = "This is screen three",
-                headingColor = com.manual.niceapps.fofscr.lib.R.color.redLib,
-                descriptionColor = com.manual.niceapps.fofscr.lib.R.color.yellowLib,
-                nextColor = com.manual.niceapps.fofscr.lib.R.color.orangeLib,
-                drawableResId = com.manual.niceapps.fofscr.lib.R.drawable.img2,
+                headingColor = com.niceapps.fofscr.lib.R.color.redLib,
+                descriptionColor = com.niceapps.fofscr.lib.R.color.yellowLib,
+                nextColor = com.niceapps.fofscr.lib.R.color.orangeLib,
+                drawableResId = com.niceapps.fofscr.lib.R.drawable.img2,
                 drawableBubbleResId = R.drawable.ic_launcher_foreground,
                 viewBackgroundColor = R.color.red,
                 imageScale = 1

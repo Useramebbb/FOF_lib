@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace 'com.manual.niceapps.fofscr.lib'
+    namespace 'com.niceapps.fofscr.lib'
     compileSdk 35
 
     defaultConfig {
