@@ -12,6 +12,7 @@
         android:layout_height="0dp"
         android:contentDescription="@null"
         android:scaleType="fitXY"
+        android:src="@drawable/ff"
         app:layout_constraintBottom_toTopOf="@+id/txtHeading"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +23,7 @@
         android:id="@+id/mainCopy"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="@dimen/_8sdp"
+        android:visibility="gone"
         android:scaleType="centerInside"
         android:src="@drawable/ff"
         app:layout_constraintBottom_toTopOf="@+id/txtHeading"
@@ -38,7 +39,6 @@
         android:fontFamily="@font/lexend_semibold"
         android:gravity="center"
         android:lines="2"
-        android:padding="@dimen/_5sdp"
         android:text="Heading"
         android:textAllCaps="false"
         android:textColor="@color/black"
@@ -55,7 +55,6 @@
         android:fontFamily="@font/lexend_extralight"
         android:gravity="center"
         android:lines="2"
-        android:padding="@dimen/_5sdp"
         android:text="Descrption"
         android:textAllCaps="false"
         android:textColor="@color/black"
@@ -69,9 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingVertical="@dimen/_5sdp"
-        app:layout_constraintBottom_toTopOf="@+id/glOne"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1">
+        app:layout_constraintBottom_toTopOf="@+id/glOne">
 
         <ImageView
             android:id="@+id/bubble"

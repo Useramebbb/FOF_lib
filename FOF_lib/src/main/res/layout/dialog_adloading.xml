@@ -5,12 +5,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    app:cardBackgroundColor="@color/White">
+    app:cardBackgroundColor="@color/lightTransparent">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:background="@color/White"
         android:orientation="vertical"
         android:padding="@dimen/_14sdp">
 

@@ -55,7 +55,7 @@ class LanguageScreenOne : AppCompatBaseActivity(), LanguageInterface {
             Log.d("fontColor", "config.fontColor:${config.headingColor} ")
             config.headingColor?.let {
                 findViewById<TextView>(R.id.txtSelectKeyboard).setTextColor(it)
-                findViewById<TextView>(R.id.txtAllLanguages).setTextColor(it)
+               // findViewById<TextView>(R.id.txtAllLanguages).setTextColor(it)
             }
 
             config.theme?.let {

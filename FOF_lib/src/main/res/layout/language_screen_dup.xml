@@ -18,40 +18,33 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtSelectKeyboard"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="@dimen/_10sdp"
+            android:gravity="start"
             android:text="@string/label_select_language"
-            android:textColor="@color/black"
+            android:textColor="#333333"
             android:textSize="@dimen/_16ssp"
             app:fontFamily="@font/lexend_semibold"
-            app:layout_constraintBottom_toTopOf="@+id/txtAllLanguages"
-            app:layout_constraintEnd_toStartOf="@+id/imvDone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imvDone"
-            android:layout_width="@dimen/_40sdp"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:padding="@dimen/_5sdp"
-            app:layout_constraintBottom_toBottomOf="@+id/txtSelectKeyboard"
+            app:layout_constraintBottom_toBottomOf="@+id/txtAllLanguages"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/txtSelectKeyboard"
-            app:layout_constraintTop_toTopOf="@+id/txtSelectKeyboard"
-             />
+            app:layout_constraintTop_toTopOf="@+id/txtSelectKeyboard" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/txtAllLanguages"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:paddingVertical="@dimen/_10sdp"
             android:text="@string/label_all_languages"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_16ssp"
+            android:textColor="#888888"
+            android:textSize="@dimen/_10ssp"
             app:fontFamily="@font/lexend_semibold"
-            app:layout_constraintBottom_toTopOf="@+id/recyclerViewLanguage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtSelectKeyboard" />

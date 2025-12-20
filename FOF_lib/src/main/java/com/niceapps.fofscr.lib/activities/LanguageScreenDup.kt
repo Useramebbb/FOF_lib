@@ -53,7 +53,7 @@ class LanguageScreenDup: AppCompatBaseActivity() {
 
             config.headingColor?.let {
                 findViewById<TextView>(R.id.txtSelectKeyboard).setTextColor(it)
-                findViewById<TextView>(R.id.txtAllLanguages).setTextColor(it)
+                //findViewById<TextView>(R.id.txtAllLanguages).setTextColor(it)
             }
             config.tickSelector?.let {
                 findViewById<AppCompatImageView>(R.id.imvDone).setImageDrawable(it)
@@ -108,21 +108,34 @@ class LanguageScreenDup: AppCompatBaseActivity() {
                 if (it.getStringExtra("From").equals("AppSettings")) {
                     finish()
                 } else {
-                    FOFAdsManager.showWelcomeScreen()
-                    finish()
+                    if(fofAdsConfigurations?.getRemoteConfigData()?.get("SHOW_SERVEY_SCREEN") as? Boolean == true){
+                        FOFAdsManager.showWelcomeScreen()
+                        finish()
+                    }
+                    else{
+                        FOFAdsManager.completeWelcomeScreens()
+                        finish()
+                    }
+
                 }
             }
         }
+        if((fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_SURVEY_1") as? Boolean == true) &&(fofAdsConfigurations?.getRemoteConfigData()?.get("SHOW_SERVEY_SCREEN") as? Boolean == true)){
+            if (fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_SURVEY_1") as? Boolean == true) {
+                loadAdmobSurveyOneNatives()
+            }
 
-
-        if (fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_SURVEY_1") as? Boolean == true) {
-            loadAdmobSurveyOneNatives()
+            val nativeSurvey2Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_SURVEY_2") as? Boolean ?: false
+            if (nativeSurvey2Enabled) {
+                loadAdmobSurveyDupNatives()
+            }
+        }else{
+            val nativeWalkThrough1Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_1") as? Boolean ?: false
+            if (nativeWalkThrough1Enabled) {
+                loadAdmobWTOneNatives()
+            }
         }
 
-        val nativeSurvey2Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_SURVEY_2") as? Boolean ?: false
-        if (nativeSurvey2Enabled) {
-            loadAdmobSurveyDupNatives()
-        }
 
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
@@ -210,6 +223,21 @@ class LanguageScreenDup: AppCompatBaseActivity() {
             )
         } else {
             Log.e("NICE_APPS_ADS_TAG", "Admob ad ID not found for NATIVE_SURVEY_2")
+        }
+    }
+    private fun loadAdmobWTOneNatives() {
+        val adId = fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_1")
+        if (adId != null) {
+            AdmobNativeAdManager.requestAd(
+                mContext = this,
+                adId = adId,
+                adName = "WALKTHROUGH_1",
+                isMedia = true,
+                isMediumAd = true,
+                populateView = false
+            )
+        } else {
+            Log.e("NICE_APPS_ADS_TAG","Admob ad ID not found for WALKTHROUGH_1")
         }
     }
 

@@ -1,4 +1,4 @@
-package com.urdu_keyboard.utilityClasses
+package com.niceapp.fof.lib
 
 object RemoteConfigConstTest {
     // SOT-Ads-Visibility-Config
@@ -18,4 +18,5 @@ object RemoteConfigConstTest {
 
 
     const val TIMER_NATIVE_F_SRC = "TIMER_NATIVE_F_SRC"
+    const val SHOW_SERVEY_SCREEN = "SHOW_SERVEY_SCREEN"
 }

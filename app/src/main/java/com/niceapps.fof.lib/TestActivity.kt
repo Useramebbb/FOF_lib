@@ -17,6 +17,7 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
 import com.niceapps.fofscr.lib.activities.AppCompatBaseActivity
 import com.niceapp.fof.lib.R
+import com.niceapp.fof.lib.RemoteConfigConstTest
 import com.niceapps.fofscr.lib.adMobAdClasses.AdMobBannerAdSplash
 import com.niceapps.fofscr.lib.callingClasses.LanguageScreensConfiguration
 import com.niceapps.fofscr.lib.callingClasses.FOFAdsConfigurations
@@ -32,7 +33,6 @@ import com.niceapps.fofscr.lib.utils.PrefHelper
 import com.niceapps.fofscr.lib.utils.hideSystemUIUpdated
 import com.niceapps.fofscr.lib.utilsGoogleAdsConsent.ConsentConfigurations
 import com.niceapp.fof.lib.databinding.ActivityStartTestBinding
-import com.urdu_keyboard.utilityClasses.RemoteConfigConstTest
 
 class TestActivity : AppCompatBaseActivity() {
 
@@ -141,7 +141,7 @@ class TestActivity : AppCompatBaseActivity() {
                 )!!,
                 tickSelector = AppCompatResources.getDrawable(
                     this,
-                    com.niceapps.fofscr.lib.R.drawable.ic_done
+                    com.niceapps.fofscr.lib.R.drawable.next_language
                 )!!,
                 themeColor = ContextCompat.getColor(this, R.color.red),
                 statusBarColor = ContextCompat.getColor(this, R.color.red),
@@ -402,7 +402,7 @@ class TestActivity : AppCompatBaseActivity() {
                 drawableResId = com.niceapps.fofscr.lib.R.drawable.img2,
                 drawableBubbleResId = R.drawable.ic_launcher_foreground,
                 viewBackgroundColor = R.color.red,
-                imageScale = 1
+                imageScale = 0
             ),
             WalkThroughItem(
                 heading = "Screen 3",
@@ -413,7 +413,7 @@ class TestActivity : AppCompatBaseActivity() {
                 drawableResId = com.niceapps.fofscr.lib.R.drawable.img2,
                 drawableBubbleResId = R.drawable.ic_launcher_foreground,
                 viewBackgroundColor = R.color.red,
-                imageScale = 1
+                imageScale = 0
             )
         )
     }
@@ -475,9 +475,11 @@ class TestActivity : AppCompatBaseActivity() {
             this["INTERSTITIAL_LETS_START"] =
                 prefs.getBoolean(RemoteConfigConstTest.INTERSTITIAL_LETS_START, false)
 
-
             this["TIMER_NATIVE_F_SRC"] =
                 "${prefs.getString(RemoteConfigConstTest.TIMER_NATIVE_F_SRC, "Empty")}"
+
+            this["SHOW_SERVEY_SCREEN"] = false
+               // prefs.getBoolean(RemoteConfigConstTest.SHOW_SERVEY_SCREEN, false)
         }
         return remoteConfigHashMap
     }
