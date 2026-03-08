@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -12,6 +13,7 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
@@ -374,9 +376,6 @@ class TestActivity : AppCompatBaseActivity() {
     }
 
 
-
-
-
     private fun getWalkThroughList(context: Context): ArrayList<WalkThroughItem> {
         val localizedContext = ContextWrapper(context).createConfigurationContext(
             resources.configuration.apply { MyLocaleHelper.onAttach(context, "en") }
@@ -478,7 +477,7 @@ class TestActivity : AppCompatBaseActivity() {
             this["TIMER_NATIVE_F_SRC"] =
                 "${prefs.getString(RemoteConfigConstTest.TIMER_NATIVE_F_SRC, "Empty")}"
 
-            this["SHOW_SERVEY_SCREEN"] = false
+            this["SHOW_SERVEY_SCREEN"] = true
                // prefs.getBoolean(RemoteConfigConstTest.SHOW_SERVEY_SCREEN, false)
         }
         return remoteConfigHashMap

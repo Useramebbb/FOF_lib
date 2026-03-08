@@ -113,6 +113,7 @@ class LanguageScreenDup: AppCompatBaseActivity() {
                         finish()
                     }
                     else{
+                        FOFAdsManager.notifyReConfigureBuilders()
                         FOFAdsManager.completeWelcomeScreens()
                         finish()
                     }
