@@ -25,7 +25,7 @@ class FOFAdsConfigurations private constructor() {
             Log.i("RemoteConfigFetches","AdsConfigurations : setRemoteConfigData() "+value.key + " : " + value.value)
         }
 
-        if (NetworkCheck.isNetworkAvailable(activityContext)) {
+        if (NetworkCheck.isNetworkAvailable(activityContext) && myRemoteConfigData.getValue("IS_PREMIUM_USER") == false) {
             when {
                 myRemoteConfigData.getValue("RESUME_INTER_SPLASH") == "RESUME" -> {
                     showAdMobResumeAdSplash(activityContext)

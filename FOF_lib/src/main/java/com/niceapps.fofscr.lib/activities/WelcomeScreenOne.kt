@@ -50,7 +50,7 @@ class WelcomeScreenOne : AppCompatBaseActivity(), WelcomeInterface {
     override fun onResume() {
         super.onResume()
         val nativeSurvey1Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_SURVEY_1") as? Boolean ?: false
-        if (nativeSurvey1Enabled) {
+        if (nativeSurvey1Enabled && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false) {
             showAdmobSurveyOneNatives()
         } else {
             myView?.let {

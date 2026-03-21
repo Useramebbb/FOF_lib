@@ -82,7 +82,7 @@ class WTFullScreenAdFragment : Fragment() {
         }
 
         val nativeWalkThroughFullScrEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_FULLSCR") as? Boolean ?: false
-        if (nativeWalkThroughFullScrEnabled) {
+        if (nativeWalkThroughFullScrEnabled && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false) {
             binding.shimmerLayoutF.root.visibility = View.VISIBLE
             showAdmobWTFullNatives()
         } else {

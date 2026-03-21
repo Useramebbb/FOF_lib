@@ -131,7 +131,7 @@ class WTThreeFragment : Fragment() {
     private fun setupButton() {
         binding.btnNext.setOnClickListener {
             eventTracker?.logEvent(requireActivity(), "walkthrough3_scr_tap_start")
-            if (FOFAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean == true) {
+            if ((FOFAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean == true) && (FOFAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)) {
                 safeShowAdmobWTThreeInterstitial()
             } else {
                 safeLetsStartClick()
@@ -180,7 +180,7 @@ class WTThreeFragment : Fragment() {
             return
         }
 
-        if (FOFAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_3") as? Boolean == true) {
+        if ((FOFAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_3") as? Boolean == true) && (FOFAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)) {
             safeShowAdmobWTThreeNatives()
         } else {
             binding.nativeAdContainerAd.visibility = View.GONE

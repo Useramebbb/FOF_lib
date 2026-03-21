@@ -76,20 +76,24 @@ class WTOneFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         fofAdsConfigurations = FOFAdsManager.getConfigurations()
         Log.i("SOTStartTestActivity", "walkthrough1_scr")
-        val nativeWalkThroughTwoEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_2") as? Boolean ?: false
-        if (nativeWalkThroughTwoEnabled) {
-            loadAdmobWTTwoNatives()
+
+        if(fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false){
+            val nativeWalkThroughTwoEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_2") as? Boolean ?: false
+            if (nativeWalkThroughTwoEnabled) {
+                loadAdmobWTTwoNatives()
+            }
+
+            val nativeWalkThroughFullEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_FULLSCR") as? Boolean ?: false
+            if (nativeWalkThroughFullEnabled) {
+                loadAdmobWTFullNatives()
+            }
+
+            val interstitialLetsStartEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean ?: false
+            if (interstitialLetsStartEnabled) {
+                loadAdmobWTThreeInterstitial()
+            }
         }
 
-        val nativeWalkThroughFullEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_FULLSCR") as? Boolean ?: false
-        if (nativeWalkThroughFullEnabled) {
-            loadAdmobWTFullNatives()
-        }
-
-        val interstitialLetsStartEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean ?: false
-        if (interstitialLetsStartEnabled) {
-            loadAdmobWTThreeInterstitial()
-        }
 
         lifecycleScope.launch {
             val targetImageView = if (scaleType == 0) {
@@ -199,7 +203,7 @@ class WTOneFragment : Fragment() {
 
 
         val nativeWalkThrough1Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_1") as? Boolean ?: false
-        if (nativeWalkThrough1Enabled) {
+        if (nativeWalkThrough1Enabled && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false) {
             showAdmobWTOneNatives()
         } else {
             binding.nativeAdContainerAd.visibility = View.GONE

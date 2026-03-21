@@ -25,7 +25,7 @@ import kotlinx.coroutines.withContext
 
 class WTTwoFragment : Fragment() {
     private lateinit var binding: FragmentWTTwoBinding
-    private var FOFAdsConfigurations: FOFAdsConfigurations? = null
+    private var fofAdsConfigurations: FOFAdsConfigurations? = null
     private lateinit var item: WalkThroughItem
     private var eventTracker: CommonEventTracker? = null
     private var scaleType :Int = 0
@@ -71,7 +71,7 @@ class WTTwoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        FOFAdsConfigurations = FOFAdsManager.getConfigurations()
+        fofAdsConfigurations = FOFAdsManager.getConfigurations()
         Log.i("SOTStartTestActivity", "walkthrough2_scr")
         lifecycleScope.launch {
             val targetImageView = if (scaleType == 0) {
@@ -125,8 +125,8 @@ class WTTwoFragment : Fragment() {
             viewPager?.currentItem = 2
         }
 
-        val nativeWalkThrough3Enabled = FOFAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_3") as? Boolean ?: false
-        if (nativeWalkThrough3Enabled) {
+        val nativeWalkThrough3Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_3") as? Boolean ?: false
+        if (nativeWalkThrough3Enabled && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false) {
             loadAdmobWTThreeNatives()
         }
     }
@@ -138,8 +138,8 @@ class WTTwoFragment : Fragment() {
             binding.nativeAdContainerAd.visibility = View.GONE
         }
 
-        val nativeWalkThrough1Enabled = FOFAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_2") as? Boolean ?: false
-        if (nativeWalkThrough1Enabled) {
+        val nativeWalkThrough2Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_2") as? Boolean ?: false
+        if (nativeWalkThrough2Enabled && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false) {
             binding.nativeAdContainerAd.visibility = View.VISIBLE
             showAdmobWTTwoNatives()
         } else {
@@ -148,7 +148,7 @@ class WTTwoFragment : Fragment() {
     }
 
     private fun loadAdmobWTThreeNatives() {
-        FOFAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_3")?.let { adId ->
+        fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_3")?.let { adId ->
             AdmobNativeAdManager.requestAd(
                 mContext = requireActivity(),
                 adId = adId,
@@ -162,14 +162,14 @@ class WTTwoFragment : Fragment() {
 
 
     private fun showAdmobWTTwoNatives() {
-        FOFAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_2")?.let { adId ->
+        fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_2")?.let { adId ->
             AdmobNativeAdManager.requestAd(
                 mContext = requireActivity(),
                 adId = adId,
                 adName = "WALKTHROUGH_2",
                 isMedia = true,
                 isMediumAd = true,
-                remoteConfig = FOFAdsConfigurations?.getRemoteConfigData()?.getValue("NATIVE_WALKTHROUGH_2").toString().toBoolean(),
+                remoteConfig = fofAdsConfigurations?.getRemoteConfigData()?.getValue("NATIVE_WALKTHROUGH_2").toString().toBoolean(),
                 populateView = true,
                 adContainer = binding.nativeAdContainerAd,
                 onAdFailed = {

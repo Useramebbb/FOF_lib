@@ -478,6 +478,7 @@ class TestActivity : AppCompatBaseActivity() {
                 "${prefs.getString(RemoteConfigConstTest.TIMER_NATIVE_F_SRC, "Empty")}"
 
             this["SHOW_SERVEY_SCREEN"] = true
+            this["IS_PREMIUM_USER"] = prefs.getBoolean(RemoteConfigConstTest.IS_PREMIUM_USER, false)
                // prefs.getBoolean(RemoteConfigConstTest.SHOW_SERVEY_SCREEN, false)
         }
         return remoteConfigHashMap

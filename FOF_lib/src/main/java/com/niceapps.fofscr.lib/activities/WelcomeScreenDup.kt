@@ -43,7 +43,7 @@ class WelcomeScreenDup: AppCompatBaseActivity(), WelcomeDupInterface {
         }
 
         val nativeWalkThrough1Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_1") as? Boolean ?: false
-        if (nativeWalkThrough1Enabled) {
+        if (nativeWalkThrough1Enabled && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false) {
             loadAdmobWTOneNatives()
         }
     }
@@ -51,7 +51,7 @@ class WelcomeScreenDup: AppCompatBaseActivity(), WelcomeDupInterface {
     override fun onResume() {
         super.onResume()
         val nativeSurvey1Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_SURVEY_2") as? Boolean ?: false
-        if (nativeSurvey1Enabled) {
+        if (nativeSurvey1Enabled && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false) {
             showAdmobLanguageScreenOneNatives()
         } else {
             myView?.let {

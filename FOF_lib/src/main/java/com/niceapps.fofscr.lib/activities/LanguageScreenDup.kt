@@ -23,7 +23,6 @@ import com.niceapps.fofscr.lib.utils.hideSystemUIUpdated
 import com.niceapps.fofscr.lib.utils.setStatusBarColor
 
 class LanguageScreenDup: AppCompatBaseActivity() {
-
     private lateinit var languageAdapter: LanguageAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var imvDone: AppCompatImageView
@@ -37,9 +36,7 @@ class LanguageScreenDup: AppCompatBaseActivity() {
         setContentView(R.layout.language_screen_dup)
         tracker = fofAdsConfigurations?.languageScreensConfiguration?.eventTracker
         tracker?.logEvent(
-            this,
-            "language2_scr"
-        )
+            this, "language2_scr")
         Log.i("StartTestActivity", "language2_scr")
         imvDone = findViewById(R.id.imvDone)
         recyclerView = findViewById(R.id.recyclerViewLanguage)
@@ -54,7 +51,7 @@ class LanguageScreenDup: AppCompatBaseActivity() {
             config.headingColor?.let {
                 findViewById<TextView>(R.id.txtSelectKeyboard).setTextColor(it)
                 //findViewById<TextView>(R.id.txtAllLanguages).setTextColor(it)
-            }
+                                     }
             config.tickSelector?.let {
                 findViewById<AppCompatImageView>(R.id.imvDone).setImageDrawable(it)
             }
@@ -121,7 +118,8 @@ class LanguageScreenDup: AppCompatBaseActivity() {
                 }
             }
         }
-        if((fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_SURVEY_1") as? Boolean == true) &&(fofAdsConfigurations?.getRemoteConfigData()?.get("SHOW_SERVEY_SCREEN") as? Boolean == true)){
+
+        if((fofAdsConfigurations?.getRemoteConfigData()?.get("SHOW_SERVEY_SCREEN") as? Boolean == true) && (fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)){
             if (fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_SURVEY_1") as? Boolean == true) {
                 loadAdmobSurveyOneNatives()
             }
@@ -132,7 +130,7 @@ class LanguageScreenDup: AppCompatBaseActivity() {
             }
         }else{
             val nativeWalkThrough1Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_1") as? Boolean ?: false
-            if (nativeWalkThrough1Enabled) {
+            if (nativeWalkThrough1Enabled  && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false) {
                 loadAdmobWTOneNatives()
             }
         }
@@ -152,7 +150,8 @@ class LanguageScreenDup: AppCompatBaseActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_LANGUAGE_2") as? Boolean == true) {
+        if ((fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_LANGUAGE_2") as? Boolean == true) && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false
+            ) {
             findViewById<CardView>(R.id.nativeAdContainerAd).visibility = View.VISIBLE
             showAdmobLanguageScreenDupNatives()
         } else {
@@ -161,7 +160,6 @@ class LanguageScreenDup: AppCompatBaseActivity() {
             }
         }
     }
-
     private fun showAdmobLanguageScreenDupNatives() {
         fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_LANGUAGE_2")?.let { adId ->
             AdmobNativeAdManager.requestAd(
@@ -191,9 +189,6 @@ class LanguageScreenDup: AppCompatBaseActivity() {
             )
         } ?: Log.w("NICE_APPS_ADS_TAG", "ADMOB_NATIVE_LANGUAGE_2 ad ID is missing.")
     }
-
-
-
     private fun loadAdmobSurveyOneNatives() {
         val adId = fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_SURVEY_1")
         if (adId != null) {
@@ -209,8 +204,6 @@ class LanguageScreenDup: AppCompatBaseActivity() {
             Log.w("NICE_APPS_ADS_TAG", "ADMOB_NATIVE_SURVEY_1 ad ID is missing.")
         }
     }
-
-
     private fun loadAdmobSurveyDupNatives() {
         val adId = fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_SURVEY_2")
         if (adId != null) {

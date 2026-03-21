@@ -116,7 +116,8 @@ class LanguageScreenOne : AppCompatBaseActivity(), LanguageInterface {
     override fun onResume() {
         super.onResume()
         val nativeLanguage1Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_LANGUAGE_1") as? Boolean ?: false
-        if (nativeLanguage1Enabled) {
+        val isPremiumUser = fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean ?: false
+        if (nativeLanguage1Enabled && !isPremiumUser) {
             showAdmobLanguageScreenOneNatives()
         } else {
             findViewById<CardView>(R.id.nativeAdContainerAd)?.let {

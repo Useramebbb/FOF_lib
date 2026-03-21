@@ -43,7 +43,8 @@ class WalkThroughConfigActivity : AppCompatBaseActivity() {
 
         binding.viewPager.post {
             val myNoOfFrag = FOFAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_FULLSCR")
-            val noOfFragment = if (NetworkCheck.isNetworkAvailable(this) && myNoOfFrag == true) {
+            val isPremium = FOFAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == true
+            val noOfFragment = if (NetworkCheck.isNetworkAvailable(this) && myNoOfFrag == true && !isPremium) {
                 4
             } else {
                 3
