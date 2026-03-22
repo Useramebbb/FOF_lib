@@ -102,7 +102,7 @@ class LanguageScreenDup: AppCompatBaseActivity() {
             )
             Log.i("StartTestActivity", "language2_scr_tap_language")
             intent?.let {
-                if (it.getStringExtra("From").equals("AppSettings")) {
+                if (it.getStringExtra("comeFrom").equals("AppSettings")) {
                     finish()
                 } else {
                     if(fofAdsConfigurations?.getRemoteConfigData()?.get("SHOW_SERVEY_SCREEN") as? Boolean == true){

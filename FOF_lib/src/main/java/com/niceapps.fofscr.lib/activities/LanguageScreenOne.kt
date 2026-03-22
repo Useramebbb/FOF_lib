@@ -100,7 +100,12 @@ class LanguageScreenOne : AppCompatBaseActivity(), LanguageInterface {
     override fun showLanguageTwoScreen() {
         if (!isFinishing && !isDestroyed) {
             try {
+                Log.d("INTENT", "showLanguageTwoScreen:$intent?")
+              val from =  intent?.let {
+                  it.getStringExtra("comeFrom")
+                }
                 val intent = Intent(this, LanguageScreenDup::class.java)
+                intent.putExtra("comeFrom",from)
                 if (intent.resolveActivity(packageManager) != null) {
                     startActivity(intent, ActivityOptions.makeCustomAnimation(this, 0, 0).toBundle())
                     finish()
