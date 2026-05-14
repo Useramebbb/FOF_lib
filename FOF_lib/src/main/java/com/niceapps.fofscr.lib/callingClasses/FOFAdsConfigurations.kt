@@ -26,6 +26,15 @@ class FOFAdsConfigurations private constructor() {
         }
 
         if (NetworkCheck.isNetworkAvailable(activityContext) && myRemoteConfigData.getValue("IS_PREMIUM_USER") == false) {
+            if (!PrefHelper(activityContext).getBooleanDefault("StartScreens", default = false)) {
+                if (myRemoteConfigData.getValue("NATIVE_LANGUAGE_1") == true) {
+                    loadAdmobLanguageScreenOneNatives(activityContext)
+                }
+                if (myRemoteConfigData.getValue("NATIVE_LANGUAGE_2") == true) {
+                    loadAdmobLanguageScreenDupNatives(activityContext)
+                }
+
+            }
             when {
                 myRemoteConfigData.getValue("RESUME_INTER_SPLASH") == "RESUME" -> {
                     showAdMobResumeAdSplash(activityContext)
@@ -35,15 +44,6 @@ class FOFAdsConfigurations private constructor() {
                 }
                 myRemoteConfigData.getValue("RESUME_INTER_SPLASH") == "OFF" -> {
                     proceedNext(activityContext)
-                }
-            }
-
-            if (!PrefHelper(activityContext).getBooleanDefault("StartScreens", default = false)) {
-                if (myRemoteConfigData.getValue("NATIVE_LANGUAGE_1") == true) {
-                    loadAdmobLanguageScreenOneNatives(activityContext)
-                }
-                if (myRemoteConfigData.getValue("NATIVE_LANGUAGE_2") == true){
-                    loadAdmobLanguageScreenDupNatives(activityContext)
                 }
 
             }

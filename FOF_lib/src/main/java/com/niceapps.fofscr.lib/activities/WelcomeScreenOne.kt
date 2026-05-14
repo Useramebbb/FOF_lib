@@ -43,8 +43,28 @@ class WelcomeScreenOne : AppCompatBaseActivity(), WelcomeInterface {
             }
             setContentView(myView)
         }
+        val nativeWalkThroughTwoEnabled = (fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_2") as? Boolean ?: false)  && (fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)
+        if (nativeWalkThroughTwoEnabled) {
+            loadAdmobWTTwoNatives()
+        }
 
 
+
+    }
+    private fun loadAdmobWTTwoNatives() {
+        val adId = fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_2")
+        if (adId != null) {
+            AdmobNativeAdManager.requestAd(
+                mContext = this,
+                adId = adId,
+                adName = "WALKTHROUGH_2",
+                isMedia = true,
+                isMediumAd = true,
+                populateView = false
+            )
+        } else {
+            Log.e("NICE_APPS_ADS_TAG","Admob ad ID not found for WALKTHROUGH_2")
+        }
     }
 
     override fun onResume() {
@@ -86,6 +106,7 @@ class WelcomeScreenOne : AppCompatBaseActivity(), WelcomeInterface {
                     isMediumAd = true,
                     remoteConfig = fofAdsConfigurations?.getRemoteConfigData()?.getValue("NATIVE_SURVEY_1").toString().toBoolean(),
                     populateView = true,
+                    requestAgain = false,
                     adContainer = myView?.findViewById(R.id.nativeAdContainerAdmob),
                     onAdFailed = {
                         myView?.findViewById<CardView>(R.id.nativeAdContainerAdmob)?.visibility = View.GONE

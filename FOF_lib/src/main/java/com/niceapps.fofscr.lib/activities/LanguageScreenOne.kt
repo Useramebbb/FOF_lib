@@ -131,7 +131,7 @@ class LanguageScreenOne : AppCompatBaseActivity(), LanguageInterface {
         }
     }
 
-    private fun showAdmobLanguageScreenOneNatives() {
+    private fun showAdmobLanguageScreenOneNatives(){
         fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_LANGUAGE_1")?.let { adId ->
             AdmobNativeAdManager.requestAd(
                 mContext = this,
@@ -141,6 +141,7 @@ class LanguageScreenOne : AppCompatBaseActivity(), LanguageInterface {
                 isMediumAd = true,
                 remoteConfig = fofAdsConfigurations?.getRemoteConfigData()?.getValue("NATIVE_LANGUAGE_1").toString().toBoolean(),
                 populateView = true,
+                requestAgain =false,
                 adContainer = findViewById(R.id.nativeAdContainerAd),
                 onAdFailed = {
                     findViewById<CardView>(R.id.nativeAdContainerAd).visibility = View.GONE
@@ -149,13 +150,14 @@ class LanguageScreenOne : AppCompatBaseActivity(), LanguageInterface {
                 onAdLoaded = {
                     tracker?.logEvent(
                         this,
-                        "fof_language_0ne_adShown"
+                        "sot_language_0ne_adShown"
                     )
                     Log.i("LanguageScreenOne", "Language: onAdLoaded()")
                 }
             )
         } ?: Log.w("LanguageScreenOne", "ADMOB_NATIVE_LANGUAGE_1 ad ID is missing.")
     }
+
 
 
 }

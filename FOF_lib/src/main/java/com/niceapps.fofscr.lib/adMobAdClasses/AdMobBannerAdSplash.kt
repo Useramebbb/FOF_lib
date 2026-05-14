@@ -1,9 +1,7 @@
 package com.niceapps.fofscr.lib.adMobAdClasses
 
 import android.app.Activity
-import android.util.DisplayMetrics
 import android.util.Log
-import android.view.Display
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.Toast
@@ -22,6 +20,7 @@ class AdMobBannerAdSplash(
     private val shimmerContainer: View,
     private val onAdFailed: (() -> Unit)? = null,
     private val onAdLoaded: (() -> Unit)? = null,
+    val onAdImpression: (() -> Unit)? = null,
     private val onAdClicked: (() -> Unit)? = null) {
     private var adView: AdView? = null
     private var currentActivity: Activity? = activity
@@ -63,7 +62,11 @@ class AdMobBannerAdSplash(
                         }
                     }
                 }
-
+                override fun onAdImpression() {
+                    // 👈 THIS triggers when the ad is officially visible on screen
+                    Log.i("NICE_APPS_ADS_TAG", "Banner Impression Recorded!")
+                    onAdImpression?.invoke()
+                }
                 override fun onAdClicked() {
                     Log.i("NICE_APPS_ADS_TAG", "AdMob: BannerAd : onAdClicked()")
                     onAdClicked?.invoke()
@@ -75,14 +78,10 @@ class AdMobBannerAdSplash(
     }
 
     private fun getAdSizeTest(): AdSize {
-        val display: Display = currentActivity!!.windowManager.defaultDisplay
-        val outMetrics = DisplayMetrics()
-        display.getMetrics(outMetrics)
-        val widthPixels = outMetrics.widthPixels.toFloat()
-        val density = outMetrics.density
-        val adWidth = (widthPixels / density).toInt()
-        return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(currentActivity!!, adWidth)
+        return AdSize.BANNER
     }
 
 
 }
+
+

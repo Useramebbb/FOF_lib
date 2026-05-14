@@ -78,20 +78,12 @@ class WTOneFragment : Fragment() {
         Log.i("SOTStartTestActivity", "walkthrough1_scr")
 
         if(fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false){
-            val nativeWalkThroughTwoEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_2") as? Boolean ?: false
-            if (nativeWalkThroughTwoEnabled) {
-                loadAdmobWTTwoNatives()
-            }
 
             val nativeWalkThroughFullEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_FULLSCR") as? Boolean ?: false
             if (nativeWalkThroughFullEnabled) {
                 loadAdmobWTFullNatives()
             }
 
-            val interstitialLetsStartEnabled = fofAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean ?: false
-            if (interstitialLetsStartEnabled) {
-                loadAdmobWTThreeInterstitial()
-            }
         }
 
 
@@ -147,38 +139,7 @@ class WTOneFragment : Fragment() {
 
     }
 
-    private fun loadAdmobWTThreeInterstitial() {
-        val adId = fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_INTERSTITIAL_LETS_START")
-        if (adId != null) {
-            AdMobInterstitialInside.checkAndLoadAdMobInterstitial(
-                context = requireActivity(),
-                nameFragment = "WALKTHROUGH_3",
-                adId = adId,
-                onAdLoadedCallAdmob = {
-                    Log.i("NICE_APPS_ADS_TAG","Admob: Interstitial : WALKTHROUGH_3 : adLoaded()")
-                }
-            )
-        } else {
-            Log.e("NICE_APPS_ADS_TAG","Admob: Interstitial ad ID not found for WALKTHROUGH_3")
-        }
-    }
 
-
-    private fun loadAdmobWTTwoNatives() {
-        val adId = fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_2")
-        if (adId != null) {
-            AdmobNativeAdManager.requestAd(
-                mContext = requireActivity(),
-                adId = adId,
-                adName = "WALKTHROUGH_2",
-                isMedia = true,
-                isMediumAd = true,
-                populateView = false
-            )
-        } else {
-            Log.e("NICE_APPS_ADS_TAG","Admob ad ID not found for ADMOB_NATIVE_WALKTHROUGH_2")
-        }
-    }
 
     private fun loadAdmobWTFullNatives() {
         val adId = fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_FULLSCR")
@@ -221,6 +182,7 @@ class WTOneFragment : Fragment() {
                 isMediumAd = true,
                 remoteConfig = fofAdsConfigurations?.getRemoteConfigData()?.getValue("NATIVE_WALKTHROUGH_1").toString().toBoolean(),
                 populateView = true,
+                requestAgain = false,
                 adContainer = binding.nativeAdContainerAd,
                 onAdFailed = {
                     binding.nativeAdContainerAd.visibility = View.GONE

@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -35,6 +34,7 @@ object AdmobNativeAdManager {
         isMediumAd: Boolean = false,
         remoteConfig: Boolean = true,
         populateView: Boolean = false,
+        requestAgain: Boolean = true,
         adContainer: CardView? = null,
         onAdFailed: (() -> Unit)? = null,
         onAdLoaded: (() -> Unit)? = null) {
@@ -65,6 +65,13 @@ object AdmobNativeAdManager {
                 showCachedAd(adName, isMedia, adContainer, isMediumAd)
             }
             return
+        }else{
+            if(!requestAgain){
+                nativeAdCache[adName] = null
+                adLoadingState[adName] = false
+                onAdFailed?.invoke()
+                return
+            }
         }
 
         adLoadingState[adName] = true
@@ -91,7 +98,7 @@ object AdmobNativeAdManager {
                                 populateNativeAd(isMediumAd, nativeAd, adView, isMedia)
                             } else {
                                 Log.i("NICE_APPS_ADS_TAG", "Admob: Native : $adName : populateSimpleNativeAdmob()")*/
-                                populateNativeAd(isMediumAd, nativeAd, adView, isMedia)
+                            populateNativeAd(isMediumAd, nativeAd, adView, isMedia)
                             /*}*/
 //                            container.removeAllViews()
                             container.addView(adView)
@@ -126,15 +133,15 @@ object AdmobNativeAdManager {
                     override fun onAdClicked() {
                         super.onAdClicked()
                         Log.i("NICE_APPS_ADS_TAG", "Admob: Native : $adName : onAdClicked()")
-                        nativeAdCache[adName] = null
-                        adLoadingState[adName] = false
+                        //nativeAdCache[adName] = null
+                        //adLoadingState[adName] = false
                     }
 
                     override fun onAdImpression() {
                         super.onAdImpression()
                         Log.i("NICE_APPS_ADS_TAG", "Admob: Native : $adName : onAdImpression()")
-                        nativeAdCache[adName] = null
-                        adLoadingState[adName] = false
+                        // nativeAdCache[adName] = null
+                        // adLoadingState[adName] = false
                     }
 
                     override fun onAdOpened() {
@@ -194,6 +201,7 @@ object AdmobNativeAdManager {
         adView.bodyView = adView.findViewById(R.id.adBody)
         adView.callToActionView = adView.findViewById(R.id.adCallToAction)
         adView.iconView = adView.findViewById(R.id.adAppIcon)
+
         (adView.headlineView as TextView).text = nativeAd.headline
 
         // Configure Body
@@ -209,7 +217,7 @@ object AdmobNativeAdManager {
             adView.callToActionView?.visibility = View.INVISIBLE
         } else {
             adView.callToActionView?.visibility = View.VISIBLE
-            (adView.callToActionView as Button).text = nativeAd.callToAction
+            (adView.callToActionView as TextView).text = nativeAd.callToAction
         }
 
         // Configure Icon
@@ -257,6 +265,21 @@ object AdmobNativeAdManager {
             videoController.videoLifecycleCallbacks = object : VideoController.VideoLifecycleCallbacks() {
                 // Handle video lifecycle events
             }
+        }
+    }
+
+    fun clearAdCache() {
+        try {
+            // destroy() releases the memory used by the ads
+            nativeAdCache.values.forEach { it?.destroy() }
+
+            // Remove everything from our maps
+            nativeAdCache.clear()
+            adLoadingState.clear()
+
+            Log.i("NICE_APPS_ADS_TAG", "Native Ad Cache: All ads destroyed and maps cleared.")
+        } catch (e: Exception) {
+            Log.e("NICE_APPS_ADS_TAG", "Error clearing ad cache: ${e.message}")
         }
     }
 }

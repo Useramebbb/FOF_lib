@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.niceapps.fofscr.lib.databinding.FragmentWTThreeBinding
 import com.niceapps.fofscr.lib.adMobAdClasses.AdMobInterstitialInside
+import com.niceapps.fofscr.lib.adMobAdClasses.AdmobNativeAdFullScreen
 import com.niceapps.fofscr.lib.adMobAdClasses.AdmobNativeAdManager
 import com.niceapps.fofscr.lib.callingClasses.FOFAdsConfigurations
 import com.niceapps.fofscr.lib.callingClasses.FOFAdsManager
@@ -76,6 +77,14 @@ class WTThreeFragment : Fragment() {
 
         Log.i("SOTStartTestActivity", "walkthrough3_scr")
 
+        val interstitialLetsStartEnabled =
+            (FOFAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean ?: false) &&
+                    (FOFAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)
+
+        if (interstitialLetsStartEnabled) {
+            loadAdmobWTThreeInterstitial()
+        }
+
         loadImages()
         setupTextViews()
         setupButton()
@@ -136,6 +145,8 @@ class WTThreeFragment : Fragment() {
             } else {
                 safeLetsStartClick()
             }
+            AdmobNativeAdFullScreen.clearAdCache()
+            AdmobNativeAdManager.clearAdCache()
         }
     }
 
@@ -219,7 +230,21 @@ class WTThreeFragment : Fragment() {
             )
         }
     }
-
+    private fun loadAdmobWTThreeInterstitial() {
+        val adId = FOFAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_INTERSTITIAL_LETS_START")
+        if (adId != null) {
+            AdMobInterstitialInside.checkAndLoadAdMobInterstitial(
+                context = requireActivity(),
+                nameFragment = "WALKTHROUGH_3",
+                adId = adId,
+                onAdLoadedCallAdmob = {
+                    Log.i("NICE_APPS_ADS_TAG","Admob: Interstitial : WALKTHROUGH_3 : adLoaded()")
+                }
+            )
+        } else {
+            Log.e("NICE_APPS_ADS_TAG","Admob: Interstitial ad ID not found for WALKTHROUGH_3")
+        }
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

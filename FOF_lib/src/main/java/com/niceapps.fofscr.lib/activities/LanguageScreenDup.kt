@@ -44,7 +44,22 @@ class LanguageScreenDup: AppCompatBaseActivity() {
         onBackPressedDispatcher.addCallback(this) {
             /**Disable backPress until Home**/
         }
+        imvDone = findViewById(R.id.imvDone)
+        imvDone.visibility = View.GONE
+        val delayStr = fofAdsConfigurations?.getRemoteConfigData()?.get("DELAY_TO_SHOW_LANGUAGE_DONE")?.toString()
 
+        Log.i("NICE_APPS_ADS_TAG", "DELAY_TO_SHOW_LANGUAGE_DONE: $delayStr")
+
+
+        val timeDelayMillis = delayStr?.toLongOrNull() ?: 3000L
+
+        if (timeDelayMillis in 1000L..10000L) {
+            imvDone.postDelayed({
+                imvDone.visibility = View.VISIBLE
+            }, timeDelayMillis)
+        } else {
+            imvDone.visibility = View.VISIBLE
+        }
         LanguageScreensConfiguration.languageInstance?.let { config ->
             Log.d("fontColor", "config.tow:${config.fontColor} ")
 
@@ -170,6 +185,7 @@ class LanguageScreenDup: AppCompatBaseActivity() {
                 isMediumAd = true,
                 remoteConfig = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_LANGUAGE_2").toString().toBoolean(),
                 populateView = true,
+                requestAgain = false,
                 adContainer = findViewById(R.id.nativeAdContainerAd),
                 onAdFailed = {
                     tracker?.logEvent(

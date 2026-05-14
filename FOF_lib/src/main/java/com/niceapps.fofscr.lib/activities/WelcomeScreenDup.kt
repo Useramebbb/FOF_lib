@@ -42,6 +42,7 @@ class WelcomeScreenDup: AppCompatBaseActivity(), WelcomeDupInterface {
             setContentView(myView)
         }
 
+
         val nativeWalkThrough1Enabled = fofAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_1") as? Boolean ?: false
         if (nativeWalkThrough1Enabled && fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false) {
             loadAdmobWTOneNatives()
@@ -74,6 +75,7 @@ class WelcomeScreenDup: AppCompatBaseActivity(), WelcomeDupInterface {
                     isMediumAd = true,
                     remoteConfig = fofAdsConfigurations?.getRemoteConfigData()?.getValue("NATIVE_SURVEY_2").toString().toBoolean(),
                     populateView = true,
+                    requestAgain = false,
                     adContainer = myView?.findViewById(R.id.nativeAdContainerAdmob),
                     onAdFailed = {
                         myView?.findViewById<CardView>(R.id.nativeAdContainerAdmob)?.visibility = View.GONE

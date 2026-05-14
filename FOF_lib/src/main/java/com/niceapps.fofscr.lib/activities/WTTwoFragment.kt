@@ -171,6 +171,7 @@ class WTTwoFragment : Fragment() {
                 isMediumAd = true,
                 remoteConfig = fofAdsConfigurations?.getRemoteConfigData()?.getValue("NATIVE_WALKTHROUGH_2").toString().toBoolean(),
                 populateView = true,
+                requestAgain = false,
                 adContainer = binding.nativeAdContainerAd,
                 onAdFailed = {
                     binding.nativeAdContainerAd.visibility = View.GONE

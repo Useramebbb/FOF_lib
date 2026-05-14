@@ -101,16 +101,19 @@ class TestActivity : AppCompatBaseActivity() {
                 Log.i("ConsentMessage", "StartActivity: setOnConsentGatheredCallback")
                 fetchAdIDS(
                     remoteConfigOperationsCompleted = {
-                        fofAdsConfigurations.setRemoteConfigData(
-                            activityContext = this@TestActivity,
-                            myRemoteConfigData = it
-                        )
+                            remoteData ->
 
                         if (NetworkCheck.isNetworkAvailable(this)) {
-                            if (it.getValue(RemoteConfigConstTest.BANNER_SPLASH) == true) {
+                            if (remoteData.getValue(RemoteConfigConstTest.BANNER_SPLASH) == true) {
                                 binding.bannerAd.visibility = View.VISIBLE
-                                loadAdmobBannerAd()
+
+                                loadAdmobBannerAd(remoteData)
+                            } else {
+                                /**If banner is OFF in remote config, start heavy ads immediately**/
+                                startHeavyAdsFlow(remoteData)
                             }
+                        } else {
+                            startHeavyAdsFlow(remoteData)
                         }
                     }
                 )
@@ -185,18 +188,38 @@ class TestActivity : AppCompatBaseActivity() {
 
 
 
-    private fun loadAdmobBannerAd() {
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun loadAdmobBannerAd(remoteData: HashMap<String, Any>) {
         AdMobBannerAdSplash(
             activity = this@TestActivity,
             placementID = "ca-app-pub-3940256099942544/9214589741",
             bannerContainer = binding.bannerAd,
             shimmerContainer = binding.bannerShimmerLayout.root,
             onAdFailed = {
+                Log.i("SOT_ADS_TAG", "Banner Failed. Starting Interstitial/Native Flow.")
                 binding.bannerAd.visibility = View.GONE
+                startHeavyAdsFlow(remoteData)
             },
             onAdLoaded = {
+                Log.i("SOT_ADS_TAG", "Banner Loaded. Starting Interstitial/Native Flow.")
             },
-            onAdClicked = {}
+            onAdImpression = {
+                Log.i("SOT_ADS_TAG", "Banner is VISIBLE! Starting Interstitial/Native Flow.")
+                startHeavyAdsFlow(remoteData)
+            },
+            onAdClicked = {
+
+            }
+        )
+    }
+
+
+    @RequiresApi(Build.VERSION_CODES.N)
+    private fun startHeavyAdsFlow(remoteData: HashMap<String, Any>) {
+
+        fofAdsConfigurations.setRemoteConfigData(
+            activityContext = this@TestActivity,
+            myRemoteConfigData = remoteData
         )
     }
 
@@ -444,7 +467,8 @@ class TestActivity : AppCompatBaseActivity() {
         editor.putBoolean(RemoteConfigConstTest.NATIVE_WALKTHROUGH_3, true)
         editor.putBoolean(RemoteConfigConstTest.INTERSTITIAL_LETS_START, true)
         editor.putString(RemoteConfigConstTest.TIMER_NATIVE_F_SRC, "5")
-
+        editor.putString(RemoteConfigConstTest.DELAY_TO_SHOW_LANGUAGE_DONE, "2000")
+        //editor.putBoolean("IS_PURCHASED", false)
         editor.apply()
     }
 
@@ -479,6 +503,8 @@ class TestActivity : AppCompatBaseActivity() {
 
             this["SHOW_SERVEY_SCREEN"] = true
             this["IS_PREMIUM_USER"] = prefs.getBoolean(RemoteConfigConstTest.IS_PREMIUM_USER, false)
+            this["DELAY_TO_SHOW_LANGUAGE_DONE"] =
+                "${prefs.getString(RemoteConfigConstTest.DELAY_TO_SHOW_LANGUAGE_DONE, "Empty")}"
                // prefs.getBoolean(RemoteConfigConstTest.SHOW_SERVEY_SCREEN, false)
         }
         return remoteConfigHashMap

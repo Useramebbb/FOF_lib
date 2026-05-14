@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="purpel">#9C27B0</color>
+    <color name="red">#830D0D</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="yellow">#CDDC39</color>
+    <string name="app_name" translatable="false">ds-Library_Nice_Apps</string>
+    <style name="Base.Theme.AdsLibrary" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.AdsLibrary" parent="Base.Theme.AdsLibrary"/>
+</resources>

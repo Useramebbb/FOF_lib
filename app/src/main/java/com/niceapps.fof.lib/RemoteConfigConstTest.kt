@@ -3,6 +3,7 @@ package com.niceapp.fof.lib
 object RemoteConfigConstTest {
     // SOT-Ads-Visibility-Config
     const val IS_PREMIUM_USER = "IS_PREMIUM_USER"
+    const val DELAY_TO_SHOW_LANGUAGE_DONE = "DELAY_TO_SHOW_LANGUAGE_DONE"
 
     const val RESUME_INTER_SPLASH = "RESUME_INTER_SPLASH"
     const val RESUME_OVERALL = "RESUME_OVERALL"

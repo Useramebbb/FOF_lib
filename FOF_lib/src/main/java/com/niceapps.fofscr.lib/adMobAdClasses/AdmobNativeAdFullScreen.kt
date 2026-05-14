@@ -210,4 +210,15 @@ object AdmobNativeAdFullScreen {
                 }
         }
     }
+    fun clearAdCache() {
+        try {
+           nativeAdCache.values.forEach { it?.destroy() }
+           nativeAdCache.clear()
+           adLoadingState.clear()
+
+            Log.i("NICE_APPS_ADS_TAG", "Native Ad Cache: All ads destroyed and maps cleared.")
+        } catch (e: Exception) {
+            Log.e("NICE_APPS_ADS_TAG", "Error clearing ad cache: ${e.message}")
+        }
+    }
 }

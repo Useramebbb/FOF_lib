@@ -124,26 +124,25 @@ class AdmobInterstitialAdSplash(
                     Log.i("NICE_APPS_ADS_TAG", "Admob: Interstitial : onAdShowed()")
                     isShowingAd = true
                     timeoutHandler.removeCallbacks(timeoutRunnable)
-                    dismissWaitDialog()
+                    dismissWaitDialog() // Dismiss dialog as soon as ad shows
                     onAdShowed?.invoke()
                 }
             }
 
-            Handler(Looper.getMainLooper()).postDelayed({
-                currentActivity?.let { it1 ->
-                    if (!it1.isFinishing && !it1.isDestroyed && interstitialAd != null) {
-                        showWaitDialog()
-
-                        Handler(Looper.getMainLooper()).postDelayed({
-                            currentActivity?.let { it2 ->
-                                if (!it2.isFinishing && !it2.isDestroyed && interstitialAd != null) {
-                                    interstitialAd?.show(currentActivity!!)
-                                }
+            currentActivity?.let { activity ->
+                if (!activity.isFinishing && !activity.isDestroyed && interstitialAd != null) {
+                    showWaitDialog()
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        currentActivity?.let { safeActivity ->
+                            if (!safeActivity.isFinishing && !safeActivity.isDestroyed && interstitialAd != null) {
+                                interstitialAd?.show(safeActivity)
+                            } else {
+                                dismissWaitDialog()
                             }
-                        }, 1500)
-                    }
+                        }
+                    }, 500)
                 }
-            },7000)
+            }
         }
     }
 
