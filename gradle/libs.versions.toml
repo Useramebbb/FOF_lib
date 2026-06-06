@@ -1,7 +1,7 @@
 [versions]
 agp = "8.9.2"
 audienceNetworkSdk = "6.21.0"
-glide = "5.0.5"
+glide = "5.0.7"
 kotlin = "2.1.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -14,9 +14,9 @@ activity = "1.10.1"
 constraintlayout = "2.2.1"
 
 
-navigationFragmentKtx = "2.9.6"
-playServicesAds = "24.2.0"
-lottie = "6.5.1"
+navigationFragmentKtx = "2.9.8"
+playServicesAds = "25.3.0"
+lottie = "6.7.1"
 sdpAndroid = "1.1.1"
 shimmer = "0.5.0"
 sspAndroid = "1.1.1"
