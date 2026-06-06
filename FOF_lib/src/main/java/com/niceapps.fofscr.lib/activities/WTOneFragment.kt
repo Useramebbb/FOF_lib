@@ -85,7 +85,13 @@ class WTOneFragment : Fragment() {
             }
 
         }
+        val interstitialLetsStartEnabled =
+            (fofAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean ?: false) &&
+                    (fofAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)
 
+        if (interstitialLetsStartEnabled) {
+            loadAdmobWTThreeInterstitial()
+        }
 
         lifecycleScope.launch {
             val targetImageView = if (scaleType == 0) {
@@ -171,7 +177,21 @@ class WTOneFragment : Fragment() {
         }
     }
 
-
+    private fun loadAdmobWTThreeInterstitial() {
+        val adId = fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_INTERSTITIAL_LETS_START")
+        if (adId != null) {
+            AdMobInterstitialInside.checkAndLoadAdMobInterstitial(
+                context = requireActivity(),
+                nameFragment = "WALKTHROUGH_3",
+                adId = adId,
+                onAdLoadedCallAdmob = {
+                    Log.i("NICE_APPS_ADS_TAG","Admob: Interstitial : WALKTHROUGH_3 : adLoaded()")
+                }
+            )
+        } else {
+            Log.e("NICE_APPS_ADS_TAG","Admob: Interstitial ad ID not found for WALKTHROUGH_3")
+        }
+    }
     private fun showAdmobWTOneNatives() {
         fofAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_1")?.let { adId ->
             AdmobNativeAdManager.requestAd(

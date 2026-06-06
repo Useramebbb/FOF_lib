@@ -27,7 +27,7 @@ import kotlinx.coroutines.withContext
 class WTThreeFragment : Fragment() {
     private var _binding: FragmentWTThreeBinding? = null
     private val binding get() = _binding!!
-    private var FOFAdsConfigurations: FOFAdsConfigurations? = null
+    private var fOFAdsConfigurations: FOFAdsConfigurations? = null
     private lateinit var item: WalkThroughItem
     private var eventTracker: CommonEventTracker? = null
     private var adShown = false
@@ -72,18 +72,12 @@ class WTThreeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        FOFAdsConfigurations = FOFAdsManager.getConfigurations()
+        fOFAdsConfigurations = FOFAdsManager.getConfigurations()
         eventTracker?.logEvent(requireActivity(), "walkthrough3_scr")
 
         Log.i("SOTStartTestActivity", "walkthrough3_scr")
 
-        val interstitialLetsStartEnabled =
-            (FOFAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean ?: false) &&
-                    (FOFAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)
 
-        if (interstitialLetsStartEnabled) {
-            loadAdmobWTThreeInterstitial()
-        }
 
         loadImages()
         setupTextViews()
@@ -140,7 +134,7 @@ class WTThreeFragment : Fragment() {
     private fun setupButton() {
         binding.btnNext.setOnClickListener {
             eventTracker?.logEvent(requireActivity(), "walkthrough3_scr_tap_start")
-            if ((FOFAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean == true) && (FOFAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)) {
+            if ((fOFAdsConfigurations?.getRemoteConfigData()?.get("INTERSTITIAL_LETS_START") as? Boolean == true) && (fOFAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)) {
                 safeShowAdmobWTThreeInterstitial()
             } else {
                 safeLetsStartClick()
@@ -157,7 +151,7 @@ class WTThreeFragment : Fragment() {
             AdMobInterstitialInside.showIfAvailableOrLoadAdMobInterstitial(
                 context = requireActivity(),
                 nameFragment = "WALKTHROUGH_3",
-                adId = FOFAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_INTERSTITIAL_LETS_START") ?: "",
+                adId = fOFAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_INTERSTITIAL_LETS_START") ?: "",
                 onAdClosedCallBackAdmob = {
                     Log.i("NICE_APPS_ADS_TAG", "Interstitial: WALKTHROUGH_3: onAdClosedCallBackAdmob()")
                    // delay(300)
@@ -191,7 +185,7 @@ class WTThreeFragment : Fragment() {
             return
         }
 
-        if ((FOFAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_3") as? Boolean == true) && (FOFAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)) {
+        if ((fOFAdsConfigurations?.getRemoteConfigData()?.get("NATIVE_WALKTHROUGH_3") as? Boolean == true) && (fOFAdsConfigurations?.getRemoteConfigData()?.get("IS_PREMIUM_USER") as? Boolean == false)) {
             safeShowAdmobWTThreeNatives()
         } else {
             binding.nativeAdContainerAd.visibility = View.GONE
@@ -201,14 +195,14 @@ class WTThreeFragment : Fragment() {
     private fun safeShowAdmobWTThreeNatives() {
         if (!isAdded || activity == null) return
 
-        FOFAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_3")?.let { adId ->
+        fOFAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_NATIVE_WALKTHROUGH_3")?.let { adId ->
             AdmobNativeAdManager.requestAd(
                 mContext = requireActivity(),
                 adId = adId,
                 adName = "WALKTHROUGH_3",
                 isMedia = true,
                 isMediumAd = true,
-                remoteConfig = FOFAdsConfigurations
+                remoteConfig = fOFAdsConfigurations
                     ?.getRemoteConfigData()
                     ?.getValue("NATIVE_WALKTHROUGH_3")
                     .toString()
@@ -230,21 +224,7 @@ class WTThreeFragment : Fragment() {
             )
         }
     }
-    private fun loadAdmobWTThreeInterstitial() {
-        val adId = FOFAdsConfigurations?.firstOpenFlowAdIds?.getValue("ADMOB_INTERSTITIAL_LETS_START")
-        if (adId != null) {
-            AdMobInterstitialInside.checkAndLoadAdMobInterstitial(
-                context = requireActivity(),
-                nameFragment = "WALKTHROUGH_3",
-                adId = adId,
-                onAdLoadedCallAdmob = {
-                    Log.i("NICE_APPS_ADS_TAG","Admob: Interstitial : WALKTHROUGH_3 : adLoaded()")
-                }
-            )
-        } else {
-            Log.e("NICE_APPS_ADS_TAG","Admob: Interstitial ad ID not found for WALKTHROUGH_3")
-        }
-    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

@@ -143,7 +143,7 @@
     <string name="offline_dialog_text">Grazie per il tuo interesse.\nComunicheremo ulteriori dettagli quando tornerai online.</string>
     <string name="offline_notification_title">Sei di nuovo online Riprendiamo da dove abbiamo interrotto</string>
     <string name="offline_notification_title_with_advertiser">Sei di nuovo online Continua a scoprire informazioni su %s</string>
-    <string name="offline_opt_in_confirm">OK</string>
+    <string name="offline_opt_in_confirm">Ok</string>
     <string name="offline_opt_in_decline">No, grazie</string>
     <string name="offline_opt_in_message">Ti invieremo una notifica con un link che rimanda al sito dell\'inserzionista.</string>
     <string name="offline_opt_in_title">Apri l\'annuncio quando sarai di nuovo online.</string>

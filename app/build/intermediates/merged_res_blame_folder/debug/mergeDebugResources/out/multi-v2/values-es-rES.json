@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.niceapp.fof.lib.app-mergeDebugResources-58:/values-es-rES/values-es-rES.xml",
+            "outputFile": "com.niceapp.fof.lib.app-mergeDebugResources-59:/values-es-rES/values-es-rES.xml",
             "map": [
                 {
                     "source": "D:\\Anrod_Projects\\others\\fof\\FOF_lib\\FOF_lib\\build\\intermediates\\packaged_res\\debug\\packageDebugResources\\values-es-rES\\values-es-rES.xml",

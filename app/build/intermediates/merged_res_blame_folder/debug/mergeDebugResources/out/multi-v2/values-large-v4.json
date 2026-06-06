@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.niceapp.fof.lib.app-mergeDebugResources-58:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.niceapp.fof.lib.app-mergeDebugResources-59:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\8.11.1\\transforms\\d662d500b7134318725ee53ddce84e0e\\transformed\\appcompat-1.7.1\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\9.4.1\\transforms\\5495b792318fdd1e276a512378a0f34b\\transformed\\appcompat-1.7.1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\8.11.1\\transforms\\a4f82c0b47f6f8b4b2798a47e1e4f271\\transformed\\material-1.12.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\9.4.1\\transforms\\d079e9e0967402984df44bdcb0b18ae5\\transformed\\material-1.12.0\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

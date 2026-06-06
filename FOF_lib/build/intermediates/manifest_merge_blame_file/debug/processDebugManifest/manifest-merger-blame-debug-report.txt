@@ -3,7 +3,9 @@
 3    xmlns:tools="http://schemas.android.com/tools"
 4    package="com.niceapps.fofscr.lib" >
 5
-6    <uses-sdk android:minSdkVersion="23" />
+6    <uses-sdk android:minSdkVersion="24" />
+6-->INJECTED
+6-->INJECTED
 7
 8    <uses-permission android:name="android.permission.INTERNET" />
 8-->D:\Anrod_Projects\others\fof\FOF_lib\FOF_lib\src\main\AndroidManifest.xml:5:5-67

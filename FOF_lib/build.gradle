@@ -10,8 +10,7 @@ android {
     compileSdk 36
 
     defaultConfig {
-        minSdk 23
-        targetSdk 36
+        minSdk 24
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
     }
@@ -32,6 +31,12 @@ android {
     buildFeatures{
         buildConfig = true
         viewBinding = true
+    }
+    lint {
+        targetSdk 36
+    }
+    testOptions {
+        targetSdk 36
     }
 }
 

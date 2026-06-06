@@ -8,6 +8,10 @@ color yellow
 drawable app_icon
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+id action_nav_w_t_one_to_nav_w_t_two
+id action_nav_w_t_three_to_nav_w_t_two
+id action_nav_w_t_two_to_nav_w_t_one
+id action_nav_w_t_two_to_nav_w_t_three
 id adsC
 id bannerAd
 id bannerAdMint
@@ -16,6 +20,9 @@ id main
 id mainParent
 id nativeAdContainerAdmob
 id nativeAdContainerMintegral
+id nav_w_t_one
+id nav_w_t_three
+id nav_w_t_two
 id shimmerLayout
 id shimmerLayoutMint
 id svItems
@@ -32,11 +39,13 @@ id txtSplashScreen
 id txtTop
 id txtUrduSticker
 id txtWallpapers
+id walkthrough_nav
 layout activity_final
 layout activity_start_test
 layout layout_welcome_scr_test
 mipmap ic_launcher
 mipmap ic_launcher_round
+navigation walkthrough_nav
 string app_name
 style Base.Theme.AdsLibrary
 style Theme.AdsLibrary

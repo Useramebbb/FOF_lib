@@ -5,7 +5,6 @@ import com.niceapps.fofscr.lib.data.WalkThroughItem
 import java.util.ArrayList
 
 object FOFAdsManager {
-
     private var fofAdsConfigurations: FOFAdsConfigurations? = null
     private var onFinish: (() -> Unit)? = null
     private var reConfigureBuilders: (() -> Unit)? = null

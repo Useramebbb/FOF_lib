@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.niceapp.fof.lib.app-mergeDebugResources-58:/values-v17/values-v17.xml",
+            "outputFile": "com.niceapp.fof.lib.app-mergeDebugResources-59:/values-v17/values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\PC\\.gradle\\caches\\8.11.1\\transforms\\d662d500b7134318725ee53ddce84e0e\\transformed\\appcompat-1.7.1\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\PC\\.gradle\\caches\\9.4.1\\transforms\\5495b792318fdd1e276a512378a0f34b\\transformed\\appcompat-1.7.1\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
