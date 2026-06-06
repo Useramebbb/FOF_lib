@@ -111,7 +111,7 @@ class FOFAdsConfigurations private constructor() {
     }
 
 
-    private fun proceedNext(activityContext: Activity) {
+     fun proceedNext(activityContext: Activity) {
         if (PrefHelper(activityContext).getBooleanDefault("StartScreens", default = false)) {
             FOFAdsManager.notifyFlowFinished()
         } else {

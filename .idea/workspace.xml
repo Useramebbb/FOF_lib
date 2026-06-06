@@ -187,9 +187,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="413e0c7a-49af-443e-bc21-aba86b8f47c0" name="Changes" comment="&quot;IS_PREMIUM_USER  Updated&quot;">
-      <change afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deviceManager.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.11.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FOF_lib/src/main/java/com/niceapps.fofscr.lib/callingClasses/FOFAdsConfigurations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/FOF_lib/src/main/java/com/niceapps.fofscr.lib/callingClasses/FOFAdsConfigurations.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,12 +273,12 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Useramebbb/FOF_lib.git",
-    "accountId": "4580baa7-2517-4d70-9ba8-54c6b63d3d14"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Useramebbb/FOF_lib.git&quot;,
+    &quot;accountId&quot;: &quot;ae71824b-d8db-4e74-aa0e-8ed407bca22e&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -304,7 +307,7 @@
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "E:/SOT_Apps/SOT-Ad-Lib/app/src/main/res/drawable",
-    "last_opened_file_path": "E:/SOT_Apps/FOF_Lib",
+    "last_opened_file_path": "D:/Anrod_Projects/others/fof/FOF_lib",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.17",
     "project.structure.side.proportion": "0.2",
